@@ -36,7 +36,10 @@ def check_all_messages(message):
     response('I\'m doing fine, and you?', ['how', 'are', 'you', 'doing'], required_words=['how'])
     response('Thank you!', ['i', 'love', 'python'], required_words=['python'])
 
-    # best_match
+    best_match = max(highest_prob_list, key=highest_prob_list.get)
+    print(highest_prob_list)
+
+    return best_match
 
 def get_response(unser_input):
     split_message = re.split(r'\s+|[,;?!.-]\s*', unser_input.lower())
