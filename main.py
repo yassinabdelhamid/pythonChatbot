@@ -31,6 +31,12 @@ def check_all_messages(message):
         nonlocal highest_prob_list
         highest_prob_list[bot_response] = message_probability(message, list_of_words, single_response, required_words)
 
+    # Response -----------------------------------------------------------------------------------
+    response('Hello!', ['hello', 'hi', 'sup', 'hey', 'heyo'], single_response=True)
+    response('I\'m doing fine, and you?', ['how', 'are', 'you', 'doing'], required_words=['how'])
+    response('Thank you!', ['i', 'love', 'python'], required_words=['python'])
+
+    # best_match
 
 def get_response(unser_input):
     split_message = re.split(r'\s+|[,;?!.-]\s*', unser_input.lower())
